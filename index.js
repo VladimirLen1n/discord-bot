@@ -32,19 +32,5 @@ client.on('message', msg => {
     }
 })
 
-//No no words I am not comfortable showing on stream.
-const bannedWords = ['cunt', 'nigger', 'nigga', 'faggot', 'faggy', 'fag'];
-client.on('message', msg => {
-    for (var i = 0, L = bannedWords.length; i < L; i++) {
-        let msgToTest = msg.content.toLowerCase().includes(bannedWords[i]);
-        if (msgToTest) {
-            fs.appendFile("curselog.txt", msg.author.username + ' hefur sagt bannað orð: ' + msg.author.username + ': ' + msg.content, (err) => {
-                if (err) console.log(err);
-            });
-            msg.reply('You can\'t say that word!');
-            msg.delete();
-        }
-    }
-});
 //Token
-client.login('NjI1MDQ0OTAyNjczMjUyMzc3.XYZ56g.kysr7oqWQubMZyMcvzhePhoYno4');
+client.login('');
